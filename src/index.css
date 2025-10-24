@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-lato: "Lato", sans-serif; 
+}
+
+/* Light, high-contrast base inspired by Apple design */
+html, body, #root { height: 100%; }
+body {
+  background:
+    radial-gradient(800px 400px at 0% -10%, rgba(0,0,0,0.04), transparent 60%),
+    linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+  color: #1d1d1f; /* Apple’s near-black */
+}
+
+@layer utilities {
+  .glass { @apply bg-white/60 backdrop-blur-lg border border-white/60 shadow-sm; }
+  .card { @apply bg-white border border-gray-200 rounded-2xl shadow-sm; }
+  .hover-lift { @apply transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-md; }
+  .muted { @apply text-gray-600; }
+}
